@@ -1,75 +1,190 @@
 # ARIA – Adaptive Reasoning Intelligence for Attack Deception
 
-## Member 2 – SDN Module
-
-This branch contains the Software-Defined Networking (SDN) implementation for the ARIA project.
-
 ## Overview
 
-The SDN layer is responsible for monitoring network traffic, managing OpenFlow switches, and redirecting suspicious attackers to a deception environment (Cowrie Honeypot).
+ARIA is an AI-driven cyber deception platform designed to detect, analyze, and redirect malicious attackers into an intelligent honeypot environment using Software-Defined Networking (SDN), Artificial Intelligence, and Large Language Models (LLMs).
+
+The project combines SDN-based traffic control, adaptive deception techniques, AI-powered attack analysis, Retrieval-Augmented Generation (RAG), and an interactive dashboard to improve cyber defense and threat intelligence.
+
+---
+
+## Objectives
+
+- Detect suspicious network activity.
+- Redirect attackers into a controlled honeypot environment.
+- Analyze attacker behavior using AI.
+- Generate threat intelligence automatically.
+- Provide real-time monitoring through a dashboard.
+
+---
+
+## Project Architecture
+
+```
+                 Internet
+                      │
+                OpenFlow Switch
+                      │
+          ┌───────────┴───────────┐
+          │                       │
+   Legitimate Server         Cowrie Honeypot
+          │                       │
+          └───────────┬───────────┘
+                      │
+               SDN Controller
+                      │
+             AI Decision Engine
+                      │
+      Intent Classification + RAG
+                      │
+              Monitoring Dashboard
+```
+
+---
+
+## Project Modules
+
+### SDN
+
+Responsible for:
+
+- OpenFlow Controller
+- Traffic Monitoring
+- Flow Management
+- Traffic Redirection
+- Network Topology
+
+---
+
+### Backend
+
+Responsible for:
+
+- REST APIs
+- Authentication
+- Database Communication
+- Integration between all modules
+
+---
+
+### AI
+
+Responsible for:
+
+- Intent Classification
+- LLM Integration
+- Retrieval-Augmented Generation (RAG)
+- Threat Analysis
+- IOC Extraction
+
+---
+
+### Honeypot
+
+Responsible for:
+
+- Cowrie Deployment
+- Decoy Environment
+- Attack Logging
+- Session Capture
+
+---
+
+### Dashboard
+
+Responsible for:
+
+- Real-time Monitoring
+- Attack Visualization
+- Network Statistics
+- Alert Management
+
+---
+
+## Repository Structure
+
+```
+ARIA/
+│
+├── ai/
+├── backend/
+├── configs/
+├── dashboard/
+├── database/
+├── docker/
+├── docs/
+├── honeypot/
+├── scripts/
+├── sdn/
+├── tests/
+│
+├── README.md
+├── requirements.txt
+├── docker-compose.yml
+└── .gitignore
+```
+
+---
 
 ## Technologies
 
-- Python 3.11
+- Python
+- JavaScript
 - OS-Ken
 - OpenFlow 1.3
-- Open vSwitch (Upcoming)
-- Mininet (Upcoming)
+- Open vSwitch
+- Mininet
+- Cowrie Honeypot
+- MongoDB
+- Docker
+- Git & GitHub
 
-## Directory Structure
+---
 
-```
-sdn/
-├── controller.py
-├── run_controller.py
-├── monitor.py
-├── flow_manager.py
-├── redirector.py
-├── topology.py
-└── config.py
-```
+## Team Branches
 
-## Components
+| Branch | Responsibility |
+|---------|----------------|
+| `main` | Stable project integration |
+| `member1-backend` | Backend Development |
+| `member2-sdn` | SDN Development |
+| `member3-ai` | AI Development |
+| `member4-dashboard` | Dashboard Development |
 
-### controller.py
-Implements the OS-Ken SDN controller responsible for handling switch events and Packet-In messages.
+---
 
-### monitor.py
-Processes network traffic and extracts packet information for further analysis.
+## Development Workflow
 
-### flow_manager.py
-Manages OpenFlow rules that control packet forwarding.
+1. Create a feature branch from `main`.
+2. Implement and test changes.
+3. Commit and push to your branch.
+4. Open a Pull Request.
+5. Merge into `main` after review.
 
-### redirector.py
-Contains the logic required to redirect suspicious traffic toward the honeypot.
-
-### topology.py
-Defines the logical ARIA network topology.
-
-### config.py
-Stores controller and network configuration values.
+---
 
 ## Current Status
 
-Completed:
+Project Phase: Initial Development
 
-- SDN Controller Foundation
-- Traffic Monitoring Framework
-- Flow Management Module
-- Redirector Module
-- Network Topology Blueprint
-- Configuration Module
+Completed
 
-Upcoming:
+- Repository setup
+- SDN controller foundation
+- Development environment configuration
+- Initial project structure
 
-- Ubuntu SDN Environment
-- Mininet
-- Open vSwitch
-- Cowrie Integration
-- Dynamic Traffic Redirection
-- Backend Integration
-- AI-assisted Decision Engine
+In Progress
 
-## Author
+- Backend implementation
+- Ubuntu SDN environment
+- Open vSwitch integration
+- Mininet topology
+- AI module development
+- Dashboard development
 
-Member 2 – SDN Development
+---
+
+## License
+
+This project is developed for academic and research purposes.
